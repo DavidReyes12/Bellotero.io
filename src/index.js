@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from "react-redux";
+import generateStore from "./redux/store";
+
+import 'antd/dist/antd.css';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.Fragment>
+    <Provider store={generateStore()} >
+      <App />
+    </Provider>
+  </React.Fragment>,
   document.getElementById('root')
 );
 
